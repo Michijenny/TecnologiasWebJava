@@ -1,0 +1,25 @@
+CREATE TABLE Departamento (
+  id_departamento INT NOT NULL PRIMARY KEY,
+  nombre Varchar (100)
+);
+
+CREATE TABLE Empleado (
+  id_empleado INT NOT NULL PRIMARY KEY,
+  nombre Varchar (100),
+  id_departamento INT,
+  FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento));
+  
+INSERT INTO Departamento (id_departamento, nombre)
+VALUES (1, 'Recursos Humanos'),
+       (2, 'Administracion'),
+       (3, 'Software');
+	   
+INSERT INTO Empleado (id_empleado, nombre, id_departamento)
+VALUES (1, 'Jenny Enriquez', 1),
+       (2, 'Sandra Chuqui', 2),
+	   (3, 'David Tobay', 3),
+	   (4, 'Dayanna Morocho', 2),
+       (5, 'Andrea Puchi', 1);
+	   
+	   select * from Departamento;
+	   select * from Empleado;
